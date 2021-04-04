@@ -4,32 +4,34 @@
 ## Deployment Test
 ### Author: Boshra Jaber
 * [tests report](https://github.com/BoshraJaber/basic-express-server/actions)
-* [Heroku application for main branch]()
-* [Pull Request to main]()
+* [Heroku application for main branch](https://boshra-basicauth.herokuapp.com/)
+* [Pull Request to main](https://github.com/BoshraJaber/basic-auth/pull/1)
 
 ## Setup
 - `.env` requirements:
  * PORT - 3000
+ * MONGODB_URI=mongodb://localhost:27017/auth
+
 - Install Required Packages:
-  * `npm i express dotenv`
-  * `npm i express base-64 bcrypt mongoose`
-  * `npm i -d jest supertest eslint`
+  * `npm i express dotenv base-64 bcrypt mongoose`
+  * `npm i -D @code-fellows/supergoose eslint jest`
   * `npm i -g nodemon`
 - Running the app
- * `npm start`
- 1. Endpoint: `/person/?name=Boshra`
+ * `npm start` or `nodemon`
+ 1. Endpoint: `/signup`
    * Returns Object:
   ```
   {
-   "name" : "Boshra"
+   "username" : "Boshra"
+   "password": "passworsd"
   }
   ```
- 2. Endpoint: `/person`
+ 2. Endpoint: `/signin`
    * Returns Object:
   ```
   {
-    "status": 500,
-    "route": "/person"
+   "username" : "Boshra"
+   "password": "passworsd"
     }
   ``` 
  3. Endpoint: `/error`
@@ -66,4 +68,4 @@ Lint Tests: `npm run lint`
 
 ## UML:
 Here is a UML of my code: 
-![](./src/lab02.png)
+![](./src/lab6.png)

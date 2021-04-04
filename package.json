@@ -2,12 +2,12 @@
   "name": "basic-auth",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node app.js",
-    "watch": "nodemon app.js",
+    "start": "node index.js",
+    "watch": "nodemon index.js",
     "test-watch": "jest --watchAll",
-    "test": "jest"
+    "test": "jest --coverage --verbose"
   },
   "jest": {
     "testEnvironment": "node"
@@ -26,7 +26,12 @@
   "dependencies": {
     "base-64": "^1.0.0",
     "bcrypt": "^5.0.1",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "jest": "^26.6.3",
     "mongoose": "^5.12.3"
+  },
+  "devDependencies": {
+    "@code-fellows/supergoose": "^1.0.11"
   }
 }

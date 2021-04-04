@@ -9,6 +9,8 @@ const signRouters = require('./auth/router')
 
 //importing files
 const basicAuthentication = require('./auth/ middleware/basic');
+const notFoundHandler = require('./middleware/404');
+const errorHandler = require('./middleware/500');
 
 // Prepare the express app
 const app = express();
@@ -20,9 +22,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Routes
+app.get('/error', (req, res) => {
+    throw new Error('Server Error ');
+  });
 app.use(signRouters)
 
-
+app.use('*', notFoundHandler);
+app.use(errorHandler);
 
 module.exports = {
     server: app,

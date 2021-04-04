@@ -7,7 +7,7 @@
     "start": "node index.js",
     "watch": "nodemon index.js",
     "test-watch": "jest --watchAll",
-    "test": "jest --coverages --verbose"
+    "test": "jest --coverage --verbose"
   },
   "jest": {
     "testEnvironment": "node"
@@ -28,6 +28,10 @@
     "bcrypt": "^5.0.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "jest": "^26.6.3",
     "mongoose": "^5.12.3"
+  },
+  "devDependencies": {
+    "@code-fellows/supergoose": "^1.0.11"
   }
 }

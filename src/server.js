@@ -4,10 +4,11 @@ const express = require('express');
 const bcrypt = require('bcrypt');
 const base64 = require('base-64');
 const mongoose = require('mongoose');
+
 const signRouters = require('./auth/router')
 
 //importing files
-const basicAuthentication = require('./auth/ middleware/base');
+const basicAuthentication = require('./auth/ middleware/basic');
 
 // Prepare the express app
 const app = express();
@@ -19,9 +20,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Routes
-app.use('/signup', signRouters)
+app.use(signRouters)
 
-// app.post('/signup', basicAuthentication, signupHandler)
 
 
 module.exports = {

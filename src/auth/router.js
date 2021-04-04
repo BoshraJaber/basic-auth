@@ -13,13 +13,16 @@ const router = express.Router();
 
 // Routes
 
-router.post('/signup', bcryptHashing, signupHandler)
+router.post('/signup',bcryptHashing, signupHandler)
 // router.post('/signin', bcryptHashing , signinHandler)
 
 async function signupHandler(req, res){
     try {
-        res.status(201).json(record);
+        console.log("I am in the router");
+        console.log(req.record);
+        res.status(201).json(req.record);
     } catch (error){
+        // next(error)
         res.status(403).send("Error Creating User");
     }
 }

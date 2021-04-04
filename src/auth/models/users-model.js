@@ -7,6 +7,6 @@ const usersSchema = mongoose.Schema({
     password: { type: String, required: true },
 });
 // this line will create the collection (sql table) with name 'user'
-const users = mongoose.model('users', usersSchema);
+const Users = mongoose.model('users', usersSchema);
 
-module.exports = users;
+module.exports = Users;
